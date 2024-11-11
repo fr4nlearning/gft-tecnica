@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class InixApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(InixApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(InixApplication.class, args);
+    }
 
 }
