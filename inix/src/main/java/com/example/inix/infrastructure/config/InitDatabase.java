@@ -44,7 +44,7 @@ public class InitDatabase implements CommandLineRunner {
 
         return PriceEntity.builder()
                 .brand(brandEntity)
-                .startDate(LocalDateTime.parse(endDate, formatter))
+                .startDate(LocalDateTime.parse(startDate, formatter))
                 .endDate(LocalDateTime.parse(endDate, formatter))
                 .priceList(priceList)
                 .productId(35455)
