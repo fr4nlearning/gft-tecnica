@@ -10,6 +10,6 @@ public class PriceService {
     private final IPriceRepository iPriceRepository;
 
     public DataRS findByDateProductBrand(String date, Integer productId, Integer brandId) {
-        return null;
+        return iPriceRepository.findByDateProductBrand(date, productId, brandId);
     }
 }

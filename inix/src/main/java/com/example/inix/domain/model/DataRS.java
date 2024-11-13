@@ -4,11 +4,11 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public record DataRS(
-        Integer productId,
-        Integer brandId,
-        Integer priceList,
         LocalDateTime startDate,
         LocalDateTime endDate,
+        Integer priceList,
+        Integer productId,
+        Integer brandId,
         BigDecimal price
 ) {
 }

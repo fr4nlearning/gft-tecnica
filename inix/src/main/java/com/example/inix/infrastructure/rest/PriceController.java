@@ -22,6 +22,6 @@ public class PriceController {
             @RequestParam Integer productId,
             @RequestParam Integer brandId
     ) {
-        return null;
+        return ResponseEntity.ok(priceService.findByDateProductBrand(date, productId, brandId));
     }
 }
