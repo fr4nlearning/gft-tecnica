@@ -9,7 +9,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -44,8 +43,8 @@ public class InitDatabase implements CommandLineRunner {
 
         return PriceEntity.builder()
                 .brand(brandEntity)
-                .startDate(LocalDateTime.parse(startDate, formatter))
-                .endDate(LocalDateTime.parse(endDate, formatter))
+                .startDate(PriceUtils.fromStringToDate(startDate))
+                .endDate(PriceUtils.fromStringToDate(endDate))
                 .priceList(priceList)
                 .productId(35455)
                 .priority(priority)
