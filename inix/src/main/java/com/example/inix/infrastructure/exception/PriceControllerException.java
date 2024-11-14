@@ -11,6 +11,16 @@ import java.time.LocalDateTime;
 @RestControllerAdvice
 public class PriceControllerException {
 
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<Error> handlRuntimeException(IllegalArgumentException illegalArgumentException){
+        Error error= Error.builder()
+                .httpStatus(HttpStatus.BAD_REQUEST)
+                .localDateTime(LocalDateTime.now())
+                .message(illegalArgumentException.getMessage())
+                .build();
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Error> handlException(Exception exception){
         Error error= Error.builder()
