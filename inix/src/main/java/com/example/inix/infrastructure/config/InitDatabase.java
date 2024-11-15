@@ -4,6 +4,7 @@ import com.example.inix.infrastructure.adapter.IBrandCrudRepository;
 import com.example.inix.infrastructure.adapter.IPriceCrudRepository;
 import com.example.inix.infrastructure.entity.BrandEntity;
 import com.example.inix.infrastructure.entity.PriceEntity;
+import com.example.inix.infrastructure.utils.PriceUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

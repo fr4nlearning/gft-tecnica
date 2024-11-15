@@ -1,4 +1,4 @@
-package com.example.inix.infrastructure.config;
+package com.example.inix.infrastructure.utils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

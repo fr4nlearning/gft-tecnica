@@ -1,7 +1,7 @@
 package com.example.inix.infrastructure.mapper;
 
 import com.example.inix.domain.model.DataRS;
-import com.example.inix.infrastructure.config.PriceUtils;
+import com.example.inix.infrastructure.utils.PriceUtils;
 import com.example.inix.infrastructure.entity.PriceEntity;
 import org.mapstruct.*;
 
