@@ -12,8 +12,8 @@ import java.time.LocalDateTime;
 public class PriceControllerException {
 
     @ExceptionHandler(IllegalArgumentException.class)
-    public ResponseEntity<Error> handlRuntimeException(IllegalArgumentException illegalArgumentException){
-        Error error= Error.builder()
+    public ResponseEntity<Error> handlRuntimeException(IllegalArgumentException illegalArgumentException) {
+        Error error = Error.builder()
                 .httpStatus(HttpStatus.BAD_REQUEST)
                 .localDateTime(LocalDateTime.now())
                 .message(illegalArgumentException.getMessage())
@@ -22,8 +22,8 @@ public class PriceControllerException {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<Error> handlException(Exception exception){
-        Error error= Error.builder()
+    public ResponseEntity<Error> handlException(Exception exception) {
+        Error error = Error.builder()
                 .httpStatus(HttpStatus.INTERNAL_SERVER_ERROR)
                 .localDateTime(LocalDateTime.now())
                 .message(exception.getMessage())
