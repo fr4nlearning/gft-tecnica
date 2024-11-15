@@ -10,7 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -37,7 +37,7 @@ class PriceServiceTest {
         when(iPriceRepository.findByDateProductBrand("2020-06-14 16:00:00", 35455, 1))
                 .thenReturn(dataRS);
 
-        DataRS result= priceService.findByDateProductBrand("2020-06-14 16:00:00", 35455, 1);
+        DataRS result = priceService.findByDateProductBrand("2020-06-14 16:00:00", 35455, 1);
 
         assertEquals(dataRS, result);
     }
