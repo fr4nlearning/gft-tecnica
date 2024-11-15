@@ -1,10 +1,10 @@
 package com.example.inix.infrastructure.adapter;
 
 import com.example.inix.domain.model.DataRS;
-import com.example.inix.infrastructure.utils.PriceUtils;
 import com.example.inix.infrastructure.entity.BrandEntity;
 import com.example.inix.infrastructure.entity.PriceEntity;
 import com.example.inix.infrastructure.mapper.DataRSMapper;
+import com.example.inix.infrastructure.utils.PriceUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
