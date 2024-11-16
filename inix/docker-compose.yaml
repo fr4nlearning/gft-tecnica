@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  app-gft:
+    container_name: app-gft
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ports:
+      - "${PORT}:8008"

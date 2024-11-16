@@ -46,3 +46,11 @@ Desarrollar unos test al endpoint rest que  validen las siguientes peticiones al
 - Diseño y construcción del servicio.
 - Calidad de Código.
 - Resultados correctos en los test.
+
+## Ejecucion
+
+Se ha creado un docker-compose.yaml a partir del cual se podra construir la imagen y ejecutarla. Tambien hay un .env que tiene como variable el puerto que quieres usar para acceder.
+
+``` es
+docker compose up
+```
