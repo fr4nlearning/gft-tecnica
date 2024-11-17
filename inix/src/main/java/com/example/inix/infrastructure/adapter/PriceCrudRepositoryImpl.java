@@ -6,6 +6,8 @@ import com.example.inix.infrastructure.mapper.DataRSMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
+
 @Repository
 @RequiredArgsConstructor
 public class PriceCrudRepositoryImpl implements IPriceRepository {
@@ -14,7 +16,7 @@ public class PriceCrudRepositoryImpl implements IPriceRepository {
     private final DataRSMapper dataRSMapper;
 
     @Override
-    public DataRS findByDateProductBrand(String date, Integer productId, Integer brandId) {
+    public DataRS findByDateProductBrand(LocalDateTime date, Integer productId, Integer brandId) {
 
         return dataRSMapper.toDataRS(this.iPriceCrudRepository.findByDateProductBrand(date, productId, brandId));
     }
