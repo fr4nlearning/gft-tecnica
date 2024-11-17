@@ -19,20 +19,20 @@ public class PriceController implements IPriceController {
     @Override
     public ResponseEntity<DataRS> findByDateProductBrand(String date, Integer productId, Integer brandId) {
 
-        var findByDateProductBrand= priceService.findByDateProductBrand(getDate(date), productId, brandId);
-        
-        if(Objects.isNull(findByDateProductBrand)){
+        var findByDateProductBrand = priceService.findByDateProductBrand(getDate(date), productId, brandId);
+
+        if (Objects.isNull(findByDateProductBrand)) {
             return ResponseEntity.notFound().build();
-        }else {
+        } else {
             return ResponseEntity.ok(findByDateProductBrand);
         }
     }
 
-    private static LocalDateTime getDate(String date){
+    private static LocalDateTime getDate(String date) {
         try {
             return PriceUtils.fromStringToDate(date);
-        }catch (Exception e){
-            throw new IllegalArgumentException("Invalid format: "+date, e);
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Invalid format: " + date, e);
         }
     }
 }
