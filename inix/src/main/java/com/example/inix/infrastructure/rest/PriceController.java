@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Objects;
+
 @RestController
 @RequiredArgsConstructor
 public class PriceController implements IPriceController {
@@ -15,6 +17,13 @@ public class PriceController implements IPriceController {
 
     @Override
     public ResponseEntity<DataRS> findByDateProductBrand(String date, Integer productId, Integer brandId) {
-        return ResponseEntity.ok(priceService.findByDateProductBrand(PriceUtils.fromStringToDate(date), productId, brandId));
+
+        var findByDateProductBrand= priceService.findByDateProductBrand(PriceUtils.fromStringToDate(date), productId, brandId);
+
+        if(Objects.isNull(findByDateProductBrand)){
+            return ResponseEntity.notFound().build();
+        }else {
+            return ResponseEntity.ok(findByDateProductBrand);
+        }
     }
 }
