@@ -12,6 +12,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
@@ -49,12 +50,14 @@ class PriceCrudRepositoryImplTest {
                 .price(BigDecimal.valueOf(25.45))
                 .build();
 
+        LocalDateTime localDateTime= PriceUtils.fromStringToDate("2020-06-14-16.00.00");
 
-        when(iPriceCrudRepository.findByDateProductBrand("2020-06-14 16:00:00", 35455, 1))
+
+        when(iPriceCrudRepository.findByDateProductBrand(localDateTime, 35455, 1))
                 .thenReturn(priceEntity);
         when(dataRSMapper.toDataRS(priceEntity)).thenReturn(dataRS);
 
-        DataRS result = priceCrudRepository.findByDateProductBrand("2020-06-14 16:00:00", 35455, 1);
+        DataRS result = priceCrudRepository.findByDateProductBrand(localDateTime, 35455, 1);
 
         assertEquals(dataRS, result);
     }

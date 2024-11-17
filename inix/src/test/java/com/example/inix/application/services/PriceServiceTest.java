@@ -2,6 +2,7 @@ package com.example.inix.application.services;
 
 import com.example.inix.domain.model.DataRS;
 import com.example.inix.domain.port.IPriceRepository;
+import com.example.inix.infrastructure.utils.PriceUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -9,6 +10,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
@@ -34,10 +36,12 @@ class PriceServiceTest {
                 .price(BigDecimal.valueOf(25.45))
                 .build();
 
-        when(iPriceRepository.findByDateProductBrand("2020-06-14 16:00:00", 35455, 1))
+        LocalDateTime localDateTime= PriceUtils.fromStringToDate("2020-06-14-16.00.00");
+
+        when(iPriceRepository.findByDateProductBrand(localDateTime, 35455, 1))
                 .thenReturn(dataRS);
 
-        DataRS result = priceService.findByDateProductBrand("2020-06-14 16:00:00", 35455, 1);
+        DataRS result = priceService.findByDateProductBrand(localDateTime, 35455, 1);
 
         assertEquals(dataRS, result);
     }
