@@ -2,6 +2,7 @@ package com.example.inix.infrastructure.rest;
 
 import com.example.inix.domain.model.DataRS;
 import com.example.inix.infrastructure.dto.Error;
+import com.example.inix.infrastructure.exception.PriceNotFoundException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -10,13 +11,16 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDateTime;
+
 @Tag(name = "Prices CRUD", description = "API")
-@RequestMapping("/prices")
+@RequestMapping("/api/v1/prices")
 public interface IPriceController {
 
     @Operation(
@@ -62,7 +66,19 @@ public interface IPriceController {
             @ApiResponse(
                     responseCode = "404",
                     description = "Not Found",
-                    content = @Content),
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = Error.class),
+                            examples = @ExampleObject(
+                                    value = """
+                                                {
+                                                    "httpStatus": "NOT_FOUND",
+                                                    "localDateTime": "18/11/2024 01:09:47",
+                                                    "message": "Prices Not Found"
+                                                }
+                                            """
+                            )
+                    )),
             @ApiResponse(
                     responseCode = "500",
                     description = "Internal Server Error",
@@ -82,10 +98,26 @@ public interface IPriceController {
     })
 
 
-    @GetMapping("/findBy")
+    @GetMapping("/search")
     public ResponseEntity<DataRS> findByDateProductBrand(
-            @Parameter(description = "Date", example = "2020-06-14-16.00.00", required = true) @RequestParam String date,
-            @Parameter(description = "The Id of product", example = "35455", required = true) @RequestParam Integer productId,
-            @Parameter(description = "The Id of brand", example = "1", required = true) @RequestParam Integer brandId
-    );
+            @Parameter(
+                    description = "Date",
+                    example = "2020-06-14-16.00.00",
+                    schema = @Schema(
+                            type = "string",
+                            pattern = "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-([01]\\d|2[0-3])\\.([0-5]\\d)\\.([0-5]\\d)$"
+                    ),
+                    required = true)
+            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd-HH.mm.ss") LocalDateTime date,
+            @Parameter(
+                    description = "The Id of product",
+                    example = "35455",
+                    required = true)
+            @RequestParam Integer productId,
+            @Parameter(
+                    description = "The Id of brand",
+                    example = "1",
+                    required = true)
+            @RequestParam Integer brandId
+    ) throws PriceNotFoundException;
 }
