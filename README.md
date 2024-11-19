@@ -48,7 +48,7 @@ Desarrollar unos test al endpoint rest que  validen las siguientes peticiones al
 - Calidad de Código.
 - Resultados correctos en los test.
 
-## Ejecucion
+## Ejecución
 
 Se ha creado un docker-compose.yaml a partir del cual se podra construir la imagen y ejecutarla. Tambien hay un .env que tiene como variable el puerto que quieres usar para acceder.
 
@@ -56,7 +56,7 @@ Se ha creado un docker-compose.yaml a partir del cual se podra construir la imag
 docker compose up
 ```
 
-## Documentacion
+## Documentación
 
 Para poder acceder a Swagger UI por defecto esta en:
 
@@ -66,3 +66,10 @@ http://localhost:8008/swagger-ui.html
 
 ### Nota
 Por defecto en las variables de entorno de Postman esta por defecto localhost y 8008 que este ultimo es el puerto por defecto del contenedor
+
+
+### Ejemplo de acceso mediante Postman
+
+``` es
+http://localhost:8008/api/v1/prices/search?date=2020-06-14-10.00.00&productId=35455&brandId=1
+```
