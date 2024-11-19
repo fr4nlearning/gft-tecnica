@@ -26,15 +26,17 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{host}}:{{port}}/prices/findBy?date=2020-06-14-10.00.00&productId=35455&brandId=1",
+					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-14-10.00.00&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
 					],
 					"port": "{{port}}",
 					"path": [
+						"api",
+						"v1",
 						"prices",
-						"findBy"
+						"search"
 					],
 					"query": [
 						{
@@ -74,15 +76,17 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{host}}:{{port}}/prices/findBy?date=2020-06-14-16.00.00&productId=35455&brandId=1",
+					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-14-16.00.00&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
 					],
 					"port": "{{port}}",
 					"path": [
+						"api",
+						"v1",
 						"prices",
-						"findBy"
+						"search"
 					],
 					"query": [
 						{
@@ -122,15 +126,17 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{host}}:{{port}}/prices/findBy?date=2020-06-14-21.00.00&productId=35455&brandId=1",
+					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-14-21.00.00&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
 					],
 					"port": "{{port}}",
 					"path": [
+						"api",
+						"v1",
 						"prices",
-						"findBy"
+						"search"
 					],
 					"query": [
 						{
@@ -170,15 +176,17 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{host}}:{{port}}/prices/findBy?date=2020-06-15-10.00.00&productId=35455&brandId=1",
+					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-15-10.00.00&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
 					],
 					"port": "{{port}}",
 					"path": [
+						"api",
+						"v1",
 						"prices",
-						"findBy"
+						"search"
 					],
 					"query": [
 						{
@@ -218,15 +226,17 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{host}}:{{port}}/prices/findBy?date=2020-06-16-21.00.00&productId=35455&brandId=1",
+					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-16-21.00.00&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
 					],
 					"port": "{{port}}",
 					"path": [
+						"api",
+						"v1",
 						"prices",
-						"findBy"
+						"search"
 					],
 					"query": [
 						{
