@@ -6,24 +6,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeParseException;
 
 @RestControllerAdvice
 @Slf4j
 public class PriceControllerException {
-
-    @ExceptionHandler(DateTimeParseException.class)
-    public ResponseEntity<Error> handlRuntimeException(DateTimeParseException dateTimeParseException) {
-        log.error("DateTimeParseException ocurred", dateTimeParseException);
-        Error error = Error.builder()
-                .httpStatus(HttpStatus.BAD_REQUEST)
-                .localDateTime(LocalDateTime.now())
-                .message(dateTimeParseException.getMessage())
-                .build();
-        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
-    }
 
     @ExceptionHandler(PriceNotFoundException.class)
     public ResponseEntity<Error> handlRuntimeException(PriceNotFoundException priceNotFoundException) {
@@ -34,6 +23,17 @@ public class PriceControllerException {
                 .message(priceNotFoundException.getMessage())
                 .build();
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    public ResponseEntity<Error> handlRuntimeException(MethodArgumentTypeMismatchException methodArgumentTypeMismatchException) {
+        log.error("MethodArgumentTypeMismatchException ocurred", methodArgumentTypeMismatchException);
+        Error error = Error.builder()
+                .httpStatus(HttpStatus.BAD_REQUEST)
+                .localDateTime(LocalDateTime.now())
+                .message(methodArgumentTypeMismatchException.getMessage())
+                .build();
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)
