@@ -13,6 +13,7 @@ PRICES
 | 1        	| 2020-06-14-15.00.00 	| 2020-06-14-18.30.00 	| 2          	| 35455      	| 1        	| 25.45 	| EUR  	|
 | 1        	| 2020-06-15-00.00.00 	| 2020-06-15-11.00.00 	| 3          	| 35455      	| 1        	| 30.50 	| EUR  	|
 | 1        	| 2020-06-15-16.00.00 	| 2020-12-31-23.59.59 	| 4          	| 35455      	| 1        	| 38.95 	| EUR  	| 
+
 Campos: 
  
 - BRAND_ID: foreign key de la cadena del grupo (1 = ZARA).
@@ -54,3 +55,14 @@ Se ha creado un docker-compose.yaml a partir del cual se podra construir la imag
 ``` es
 docker compose up
 ```
+
+## Documentacion
+
+Para poder acceder a Swagger UI por defecto esta en:
+
+``` es
+http://localhost:8008/swagger-ui.html
+```
+
+### Nota
+Por defecto en las variables de entorno de Postman esta por defecto localhost y 8008 que este ultimo es el puerto por defecto del contenedor
