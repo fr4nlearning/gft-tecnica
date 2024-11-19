@@ -27,7 +27,7 @@ public class PriceCrudRepositoryImpl implements IPriceRepository {
         DataRSMapper mapper = Mappers.getMapper(DataRSMapper.class);
 
         PriceEntity byDateProductBrand = this.iPriceCrudRepository.findByDateProductBrand(date, productId, brandId);
-        if(Objects.isNull(byDateProductBrand)){
+        if (Objects.isNull(byDateProductBrand)) {
             log.error("Prices with: brandId: {}, productId: {}, date: {}", brandId, productId, date);
             throw new PriceNotFoundException();
         }

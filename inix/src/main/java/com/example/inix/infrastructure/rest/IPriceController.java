@@ -96,8 +96,6 @@ public interface IPriceController {
                             )
                     ))
     })
-
-
     @GetMapping("/search")
     public ResponseEntity<DataRS> findByDateProductBrand(
             @Parameter(
