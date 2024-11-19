@@ -26,20 +26,22 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{host}}:{{port}}/prices/findBy?date=2020-06-14T10:00:00&productId=35455&brandId=1",
+					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-14-10.00.00&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
 					],
 					"port": "{{port}}",
 					"path": [
+						"api",
+						"v1",
 						"prices",
-						"findBy"
+						"search"
 					],
 					"query": [
 						{
 							"key": "date",
-							"value": "2020-06-14T10:00:00"
+							"value": "2020-06-14-10.00.00"
 						},
 						{
 							"key": "productId",
@@ -74,20 +76,22 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{host}}:{{port}}/prices/findBy?date=2020-06-14T16:00:00&productId=35455&brandId=1",
+					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-14-16.00.00&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
 					],
 					"port": "{{port}}",
 					"path": [
+						"api",
+						"v1",
 						"prices",
-						"findBy"
+						"search"
 					],
 					"query": [
 						{
 							"key": "date",
-							"value": "2020-06-14T16:00:00"
+							"value": "2020-06-14-16.00.00"
 						},
 						{
 							"key": "productId",
@@ -122,20 +126,22 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{host}}:{{port}}/prices/findBy?date=2020-06-14T21:00:00&productId=35455&brandId=1",
+					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-14-21.00.00&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
 					],
 					"port": "{{port}}",
 					"path": [
+						"api",
+						"v1",
 						"prices",
-						"findBy"
+						"search"
 					],
 					"query": [
 						{
 							"key": "date",
-							"value": "2020-06-14T21:00:00"
+							"value": "2020-06-14-21.00.00"
 						},
 						{
 							"key": "productId",
@@ -170,20 +176,22 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{host}}:{{port}}/prices/findBy?date=2020-06-15T10:00:00&productId=35455&brandId=1",
+					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-15-10.00.00&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
 					],
 					"port": "{{port}}",
 					"path": [
+						"api",
+						"v1",
 						"prices",
-						"findBy"
+						"search"
 					],
 					"query": [
 						{
 							"key": "date",
-							"value": "2020-06-15T10:00:00"
+							"value": "2020-06-15-10.00.00"
 						},
 						{
 							"key": "productId",
@@ -218,20 +226,22 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{host}}:{{port}}/prices/findBy?date=2020-06-16T21:00:00&productId=35455&brandId=1",
+					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-16-21.00.00&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
 					],
 					"port": "{{port}}",
 					"path": [
+						"api",
+						"v1",
 						"prices",
-						"findBy"
+						"search"
 					],
 					"query": [
 						{
 							"key": "date",
-							"value": "2020-06-16T21:00:00"
+							"value": "2020-06-16-21.00.00"
 						},
 						{
 							"key": "productId",

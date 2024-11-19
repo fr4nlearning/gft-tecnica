@@ -4,12 +4,12 @@ import com.example.inix.infrastructure.adapter.IBrandCrudRepository;
 import com.example.inix.infrastructure.adapter.IPriceCrudRepository;
 import com.example.inix.infrastructure.entity.BrandEntity;
 import com.example.inix.infrastructure.entity.PriceEntity;
-import com.example.inix.infrastructure.utils.PriceUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -44,8 +44,8 @@ public class InitDatabase implements CommandLineRunner {
 
         return PriceEntity.builder()
                 .brand(brandEntity)
-                .startDate(PriceUtils.fromStringToDate(startDate))
-                .endDate(PriceUtils.fromStringToDate(endDate))
+                .startDate(LocalDateTime.parse(startDate, formatter))
+                .endDate(LocalDateTime.parse(endDate, formatter))
                 .priceList(priceList)
                 .productId(35455)
                 .priority(priority)
