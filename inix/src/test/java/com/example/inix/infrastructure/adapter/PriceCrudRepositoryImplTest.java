@@ -4,7 +4,7 @@ import com.example.inix.domain.model.PriceRS;
 import com.example.inix.infrastructure.entity.BrandEntity;
 import com.example.inix.infrastructure.entity.PriceEntity;
 import com.example.inix.infrastructure.exception.PriceNotFoundException;
-import com.example.inix.infrastructure.mapper.DataRSMapper;
+import com.example.inix.infrastructure.mapper.PriceRSMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mapstruct.factory.Mappers;
@@ -27,7 +27,7 @@ class PriceCrudRepositoryImplTest {
     private IPriceCrudRepository iPriceCrudRepository;
 
     @Mock
-    private DataRSMapper dataRSMapper= Mappers.getMapper(DataRSMapper.class);
+    private PriceRSMapper priceRSMapper = Mappers.getMapper(PriceRSMapper.class);
 
     @InjectMocks
     private PriceCrudRepositoryImpl priceCrudRepository;

@@ -4,7 +4,7 @@ import com.example.inix.domain.model.PriceRS;
 import com.example.inix.domain.port.IPriceRepository;
 import com.example.inix.infrastructure.entity.PriceEntity;
 import com.example.inix.infrastructure.exception.PriceNotFoundException;
-import com.example.inix.infrastructure.mapper.DataRSMapper;
+import com.example.inix.infrastructure.mapper.PriceRSMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.mapstruct.factory.Mappers;
@@ -24,13 +24,13 @@ public class PriceCrudRepositoryImpl implements IPriceRepository {
     public PriceRS findByDateProductBrand(LocalDateTime date, Integer productId, Integer brandId)
             throws PriceNotFoundException {
 
-        DataRSMapper mapper = Mappers.getMapper(DataRSMapper.class);
+        PriceRSMapper mapper = Mappers.getMapper(PriceRSMapper.class);
 
         PriceEntity byDateProductBrand = this.iPriceCrudRepository.findByDateProductBrand(date, productId, brandId);
         if (Objects.isNull(byDateProductBrand)) {
             log.error("Prices with: brandId: {}, productId: {}, date: {}", brandId, productId, date);
             throw new PriceNotFoundException();
         }
-        return mapper.toDataRS(byDateProductBrand);
+        return mapper.toPriceRS(byDateProductBrand);
     }
 }

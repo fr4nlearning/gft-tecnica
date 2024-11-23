@@ -7,7 +7,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
 @Mapper(componentModel = "spring")
-public interface DataRSMapper {
+public interface PriceRSMapper {
 
     @Mappings(
             {
@@ -19,5 +19,5 @@ public interface DataRSMapper {
                     @Mapping(source = "brand.id", target = "brandId")
             }
     )
-    PriceRS toDataRS(PriceEntity priceEntity);
+    PriceRS toPriceRS(PriceEntity priceEntity);
 }
