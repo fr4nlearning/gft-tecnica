@@ -1,6 +1,6 @@
 package com.example.inix.infrastructure.adapter;
 
-import com.example.inix.domain.model.DataRS;
+import com.example.inix.domain.model.PriceRS;
 import com.example.inix.domain.port.IPriceRepository;
 import com.example.inix.infrastructure.entity.PriceEntity;
 import com.example.inix.infrastructure.exception.PriceNotFoundException;
@@ -21,7 +21,7 @@ public class PriceCrudRepositoryImpl implements IPriceRepository {
     private final IPriceCrudRepository iPriceCrudRepository;
 
     @Override
-    public DataRS findByDateProductBrand(LocalDateTime date, Integer productId, Integer brandId)
+    public PriceRS findByDateProductBrand(LocalDateTime date, Integer productId, Integer brandId)
             throws PriceNotFoundException {
 
         DataRSMapper mapper = Mappers.getMapper(DataRSMapper.class);

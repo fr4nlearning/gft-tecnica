@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 @Builder
-public class DataRS {
+public class PriceRS {
     private String startDate;
     private String endDate;
     private Integer priceList;

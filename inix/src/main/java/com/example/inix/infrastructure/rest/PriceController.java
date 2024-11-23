@@ -1,7 +1,7 @@
 package com.example.inix.infrastructure.rest;
 
 import com.example.inix.application.services.PriceService;
-import com.example.inix.domain.model.DataRS;
+import com.example.inix.domain.model.PriceRS;
 import com.example.inix.infrastructure.exception.PriceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ public class PriceController implements IPriceController {
     private final PriceService priceService;
 
     @Override
-    public ResponseEntity<DataRS> findByDateProductBrand(
+    public ResponseEntity<PriceRS> findByDateProductBrand(
             LocalDateTime date,
             Integer productId,
             Integer brandId) throws PriceNotFoundException {

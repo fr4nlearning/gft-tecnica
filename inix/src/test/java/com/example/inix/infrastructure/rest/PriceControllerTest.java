@@ -1,7 +1,7 @@
 package com.example.inix.infrastructure.rest;
 
 import com.example.inix.application.services.PriceService;
-import com.example.inix.domain.model.DataRS;
+import com.example.inix.domain.model.PriceRS;
 import com.example.inix.infrastructure.exception.PriceNotFoundException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -33,7 +33,7 @@ class PriceControllerTest {
         final String PATTERN = "yyyy-MM-dd-HH.mm.ss";
         final DateTimeFormatter formatter = DateTimeFormatter.ofPattern(PATTERN);
 
-        final DataRS dataRS = new DataRS().builder()
+        final PriceRS priceRS = new PriceRS().builder()
                 .startDate("2020-06-14-15.00.00")
                 .endDate("2020-06-14-18.30.00")
                 .priceList(2)
@@ -45,12 +45,12 @@ class PriceControllerTest {
         final LocalDateTime localDateTime = LocalDateTime.parse("2020-06-14-16.00.00", formatter);
 
         when(priceService.findByDateProductBrand(localDateTime, 35455, 1))
-                .thenReturn(dataRS);
+                .thenReturn(priceRS);
 
-        final ResponseEntity<DataRS> result = priceController.findByDateProductBrand(localDateTime, 35455, 1);
+        final ResponseEntity<PriceRS> result = priceController.findByDateProductBrand(localDateTime, 35455, 1);
 
         assertEquals(HttpStatus.OK, result.getStatusCode());
-        assertEquals(dataRS, result.getBody());
+        assertEquals(priceRS, result.getBody());
 
     }
 }

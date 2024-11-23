@@ -1,6 +1,6 @@
 package com.example.inix.application.services;
 
-import com.example.inix.domain.model.DataRS;
+import com.example.inix.domain.model.PriceRS;
 import com.example.inix.domain.port.IPriceRepository;
 import com.example.inix.infrastructure.exception.PriceNotFoundException;
 import org.junit.jupiter.api.Test;
@@ -31,7 +31,7 @@ class PriceServiceTest {
         final String PATTERN = "yyyy-MM-dd-HH.mm.ss";
         final DateTimeFormatter formatter = DateTimeFormatter.ofPattern(PATTERN);
 
-        final DataRS dataRS = new DataRS().builder()
+        final PriceRS priceRS = new PriceRS().builder()
                 .startDate("2020-06-14-15.00.00")
                 .endDate("2020-06-14-18.30.00")
                 .priceList(2)
@@ -43,10 +43,10 @@ class PriceServiceTest {
         final LocalDateTime localDateTime = LocalDateTime.parse("2020-06-14-16.00.00", formatter);
 
         when(iPriceRepository.findByDateProductBrand(localDateTime, 35455, 1))
-                .thenReturn(dataRS);
+                .thenReturn(priceRS);
 
-        final DataRS result = priceService.findByDateProductBrand(localDateTime, 35455, 1);
+        final PriceRS result = priceService.findByDateProductBrand(localDateTime, 35455, 1);
 
-        assertEquals(dataRS, result);
+        assertEquals(priceRS, result);
     }
 }

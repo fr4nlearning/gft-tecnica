@@ -1,6 +1,6 @@
 package com.example.inix.infrastructure.rest;
 
-import com.example.inix.domain.model.DataRS;
+import com.example.inix.domain.model.PriceRS;
 import com.example.inix.infrastructure.dto.Error;
 import com.example.inix.infrastructure.exception.PriceNotFoundException;
 import io.swagger.v3.oas.annotations.Operation;
@@ -33,7 +33,7 @@ public interface IPriceController {
                     description = "Successful response",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = DataRS.class),
+                            schema = @Schema(implementation = PriceRS.class),
                             examples = @ExampleObject(
                                     value = """
                                                 {
@@ -97,7 +97,7 @@ public interface IPriceController {
                     ))
     })
     @GetMapping("/search")
-    public ResponseEntity<DataRS> findByDateProductBrand(
+    public ResponseEntity<PriceRS> findByDateProductBrand(
             @Parameter(
                     description = "Date",
                     example = "2020-06-14-16.00.00",

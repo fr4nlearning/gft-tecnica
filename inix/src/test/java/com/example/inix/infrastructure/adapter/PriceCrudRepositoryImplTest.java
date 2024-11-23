@@ -1,6 +1,6 @@
 package com.example.inix.infrastructure.adapter;
 
-import com.example.inix.domain.model.DataRS;
+import com.example.inix.domain.model.PriceRS;
 import com.example.inix.infrastructure.entity.BrandEntity;
 import com.example.inix.infrastructure.entity.PriceEntity;
 import com.example.inix.infrastructure.exception.PriceNotFoundException;
@@ -38,7 +38,7 @@ class PriceCrudRepositoryImplTest {
         final String PATTERN = "yyyy-MM-dd-HH.mm.ss";
         final DateTimeFormatter formatter = DateTimeFormatter.ofPattern(PATTERN);
 
-        final DataRS dataRS = new DataRS().builder()
+        final PriceRS priceRS = new PriceRS().builder()
                 .startDate("2020-06-14-15.00.00")
                 .endDate("2020-06-14-18.30.00")
                 .priceList(2)
@@ -62,9 +62,9 @@ class PriceCrudRepositoryImplTest {
         when(iPriceCrudRepository.findByDateProductBrand(localDateTime, 35455, 1))
                 .thenReturn(priceEntity);
 
-        final DataRS result = priceCrudRepository.findByDateProductBrand(localDateTime, 35455, 1);
+        final PriceRS result = priceCrudRepository.findByDateProductBrand(localDateTime, 35455, 1);
 
-        assertEquals(dataRS, result);
+        assertEquals(priceRS, result);
     }
 
     @Test
