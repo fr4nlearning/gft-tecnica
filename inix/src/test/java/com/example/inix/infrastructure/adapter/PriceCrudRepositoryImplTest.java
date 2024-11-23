@@ -75,7 +75,7 @@ class PriceCrudRepositoryImplTest {
 
         final PriceEntity priceEntity = null;
 
-        final LocalDateTime localDateTime = LocalDateTime.parse("2020-06-14-16.00.00", formatter);
+        final LocalDateTime localDateTime = LocalDateTime.parse("2025-06-14-16.00.00", formatter);
 
 
         when(iPriceCrudRepository.findByDateProductBrand(localDateTime, 35455, 1))
