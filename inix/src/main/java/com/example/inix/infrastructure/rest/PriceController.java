@@ -1,6 +1,5 @@
 package com.example.inix.infrastructure.rest;
 
-import com.example.inix.application.services.PriceService;
 import com.example.inix.domain.model.PriceRS;
 import com.example.inix.domain.port.IPriceService;
 import com.example.inix.infrastructure.exception.PriceNotFoundException;
