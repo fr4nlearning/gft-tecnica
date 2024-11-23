@@ -2,6 +2,7 @@ package com.example.inix.infrastructure.rest;
 
 import com.example.inix.application.services.PriceService;
 import com.example.inix.domain.model.PriceRS;
+import com.example.inix.domain.port.IPriceService;
 import com.example.inix.infrastructure.exception.PriceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +14,7 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class PriceController implements IPriceController {
 
-    private final PriceService priceService;
+    private final IPriceService priceService;
 
     @Override
     public ResponseEntity<PriceRS> findByDateProductBrand(
