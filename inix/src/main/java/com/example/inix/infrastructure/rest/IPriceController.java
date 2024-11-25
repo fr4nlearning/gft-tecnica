@@ -100,13 +100,13 @@ public interface IPriceController {
     public ResponseEntity<PriceRS> findByDateProductBrand(
             @Parameter(
                     description = "Date",
-                    example = "2020-06-14-16.00.00",
+                    example = "2020-06-14T16.00.00",
                     schema = @Schema(
                             type = "string",
-                            pattern = "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-([01]\\d|2[0-3])\\.([0-5]\\d)\\.([0-5]\\d)$"
+                            pattern = "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])T([01]\\d|2[0-3])\\.([0-5]\\d)\\.([0-5]\\d)$"
                     ),
                     required = true)
-            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd-HH.mm.ss") LocalDateTime date,
+            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH.mm.ss") LocalDateTime date,
             @Parameter(
                     description = "The Id of product",
                     example = "35455",

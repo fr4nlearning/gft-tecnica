@@ -11,8 +11,8 @@ public interface PriceRSMapper {
 
     @Mappings(
             {
-                    @Mapping(source = "startDate", target = "startDate", dateFormat = "yyyy-MM-dd-HH.mm.ss"),
-                    @Mapping(source = "endDate", target = "endDate", dateFormat = "yyyy-MM-dd-HH.mm.ss"),
+                    @Mapping(source = "startDate", target = "startDate", dateFormat = "yyyy-MM-dd'T'HH.mm.ss"),
+                    @Mapping(source = "endDate", target = "endDate", dateFormat = "yyyy-MM-dd'T'HH.mm.ss"),
                     @Mapping(source = "priceList", target = "priceList"),
                     @Mapping(source = "productId", target = "productId"),
                     @Mapping(source = "price", target = "price"),
