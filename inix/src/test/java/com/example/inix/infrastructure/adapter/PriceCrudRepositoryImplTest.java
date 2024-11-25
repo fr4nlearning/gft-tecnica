@@ -35,12 +35,12 @@ class PriceCrudRepositoryImplTest {
     @Test
     void findByDateProductBrand() throws PriceNotFoundException {
 
-        final String PATTERN = "yyyy-MM-dd-HH.mm.ss";
+        final String PATTERN = "yyyy-MM-dd'T'HH.mm.ss";
         final DateTimeFormatter formatter = DateTimeFormatter.ofPattern(PATTERN);
 
         final PriceRS priceRS = new PriceRS().builder()
-                .startDate("2020-06-14-15.00.00")
-                .endDate("2020-06-14-18.30.00")
+                .startDate("2020-06-14T15.00.00")
+                .endDate("2020-06-14T18.30.00")
                 .priceList(2)
                 .productId(35455)
                 .brandId(1)
@@ -48,15 +48,15 @@ class PriceCrudRepositoryImplTest {
                 .build();
 
         final PriceEntity priceEntity = PriceEntity.builder()
-                .startDate(LocalDateTime.parse("2020-06-14-15.00.00", formatter))
-                .endDate(LocalDateTime.parse("2020-06-14-18.30.00", formatter))
+                .startDate(LocalDateTime.parse("2020-06-14T15.00.00", formatter))
+                .endDate(LocalDateTime.parse("2020-06-14T18.30.00", formatter))
                 .priceList(2)
                 .productId(35455)
                 .brand(BrandEntity.builder().id(1).name("ZARA").build())
                 .price(BigDecimal.valueOf(25.45))
                 .build();
 
-        final LocalDateTime localDateTime = LocalDateTime.parse("2020-06-14-16.00.00", formatter);
+        final LocalDateTime localDateTime = LocalDateTime.parse("2020-06-14T16.00.00", formatter);
 
 
         when(iPriceCrudRepository.findByDateProductBrand(localDateTime, 35455, 1))
@@ -70,12 +70,12 @@ class PriceCrudRepositoryImplTest {
     @Test
     void findByDateProductBrand_NotFound() {
 
-        final String PATTERN = "yyyy-MM-dd-HH.mm.ss";
+        final String PATTERN = "yyyy-MM-dd'T'HH.mm.ss";
         final DateTimeFormatter formatter = DateTimeFormatter.ofPattern(PATTERN);
 
         final PriceEntity priceEntity = null;
 
-        final LocalDateTime localDateTime = LocalDateTime.parse("2025-06-14-16.00.00", formatter);
+        final LocalDateTime localDateTime = LocalDateTime.parse("2025-06-14T16.00.00", formatter);
 
 
         when(iPriceCrudRepository.findByDateProductBrand(localDateTime, 35455, 1))

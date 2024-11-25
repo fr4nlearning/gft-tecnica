@@ -28,19 +28,19 @@ class PriceServiceTest {
     @Test
     void testfindByDateProductBrand() throws PriceNotFoundException {
 
-        final String PATTERN = "yyyy-MM-dd-HH.mm.ss";
+        final String PATTERN = "yyyy-MM-dd'T'HH.mm.ss";
         final DateTimeFormatter formatter = DateTimeFormatter.ofPattern(PATTERN);
 
         final PriceRS priceRS = new PriceRS().builder()
-                .startDate("2020-06-14-15.00.00")
-                .endDate("2020-06-14-18.30.00")
+                .startDate("2020-06-14T15.00.00")
+                .endDate("2020-06-14T18.30.00")
                 .priceList(2)
                 .productId(35455)
                 .brandId(1)
                 .price(BigDecimal.valueOf(25.45))
                 .build();
 
-        final LocalDateTime localDateTime = LocalDateTime.parse("2020-06-14-16.00.00", formatter);
+        final LocalDateTime localDateTime = LocalDateTime.parse("2020-06-14T16.00.00", formatter);
 
         when(iPriceRepository.findByDateProductBrand(localDateTime, 35455, 1))
                 .thenReturn(priceRS);
