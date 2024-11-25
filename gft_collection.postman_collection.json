@@ -15,7 +15,18 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
-							"});"
+							"});",
+							"",
+							"const json= pm.response.json();",
+							"",
+							"pm.test(\"Have startDate\", function () {",
+							"    pm.expect(json).to.have.property(\"startDate\");",
+							"});",
+							"",
+							"pm.test(\"startDate: 2020-06-14T00.00.00\", function () {",
+							"    pm.expect(json.startDate).to.eql(\"2020-06-14T00.00.00\")",
+							"});",
+							""
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -26,7 +37,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-14-10.00.00&productId=35455&brandId=1",
+					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-14T10.00.00&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
@@ -41,7 +52,7 @@
 					"query": [
 						{
 							"key": "date",
-							"value": "2020-06-14-10.00.00"
+							"value": "2020-06-14T10.00.00"
 						},
 						{
 							"key": "productId",
@@ -65,6 +76,16 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"const json= pm.response.json();",
+							"",
+							"pm.test(\"Have endDate\", function () {",
+							"    pm.expect(json).to.have.property(\"endDate\");",
+							"});",
+							"",
+							"pm.test(\"endDate: 2020-06-14T18.30.00\", function () {",
+							"    pm.expect(json.endDate).to.eql(\"2020-06-14T18.30.00\")",
 							"});"
 						],
 						"type": "text/javascript",
@@ -76,7 +97,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-14-16.00.00&productId=35455&brandId=1",
+					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-14T16.00.00&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
@@ -91,7 +112,7 @@
 					"query": [
 						{
 							"key": "date",
-							"value": "2020-06-14-16.00.00"
+							"value": "2020-06-14T16.00.00"
 						},
 						{
 							"key": "productId",
@@ -115,6 +136,16 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"const json= pm.response.json();",
+							"",
+							"pm.test(\"Have priceList\", function () {",
+							"    pm.expect(json).to.have.property(\"priceList\");",
+							"});",
+							"",
+							"pm.test(\"priceList: 1\", function () {",
+							"    pm.expect(json.priceList).to.eql(1)",
 							"});"
 						],
 						"type": "text/javascript",
@@ -126,7 +157,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-14-21.00.00&productId=35455&brandId=1",
+					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-14T21.00.00&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
@@ -141,7 +172,7 @@
 					"query": [
 						{
 							"key": "date",
-							"value": "2020-06-14-21.00.00"
+							"value": "2020-06-14T21.00.00"
 						},
 						{
 							"key": "productId",
@@ -165,6 +196,16 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"const json= pm.response.json();",
+							"",
+							"pm.test(\"Have productId\", function () {",
+							"    pm.expect(json).to.have.property(\"productId\");",
+							"});",
+							"",
+							"pm.test(\"productId: 35455\", function () {",
+							"    pm.expect(json.productId).to.eql(35455)",
 							"});"
 						],
 						"type": "text/javascript",
@@ -176,7 +217,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-15-10.00.00&productId=35455&brandId=1",
+					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-15T10.00.00&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
@@ -191,7 +232,7 @@
 					"query": [
 						{
 							"key": "date",
-							"value": "2020-06-15-10.00.00"
+							"value": "2020-06-15T10.00.00"
 						},
 						{
 							"key": "productId",
@@ -215,6 +256,16 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"const json= pm.response.json();",
+							"",
+							"pm.test(\"Have price\", function () {",
+							"    pm.expect(json).to.have.property(\"price\");",
+							"});",
+							"",
+							"pm.test(\"price: 38.95\", function () {",
+							"    pm.expect(json.price).to.eql(38.95)",
 							"});"
 						],
 						"type": "text/javascript",
@@ -226,7 +277,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-16-21.00.00&productId=35455&brandId=1",
+					"raw": "http://{{host}}:{{port}}/api/v1/prices/search?date=2020-06-16T21.00.00&productId=35455&brandId=1",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
@@ -241,7 +292,7 @@
 					"query": [
 						{
 							"key": "date",
-							"value": "2020-06-16-21.00.00"
+							"value": "2020-06-16T21.00.00"
 						},
 						{
 							"key": "productId",
